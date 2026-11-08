@@ -1,0 +1,9 @@
+services:
+  floci:
+    image: floci/floci:latest
+    container_name: ucv-floci
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
