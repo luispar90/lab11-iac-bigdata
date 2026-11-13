@@ -7,3 +7,15 @@ services:
     volumes:
       - ./data:/app/data
     restart: unless-stopped
+
+  glue5:
+    image: public.ecr.aws/glue/aws-glue-libs:5
+    depends_on:
+      - floci
+    environment:
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_DEFAULT_REGION: us-east-1
+    volumes:
+      - ./pipelines:/home/hadoop/workspace/pipelines
+    working_dir: /home/hadoop/workspace

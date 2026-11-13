@@ -1,0 +1,32 @@
+name: product_category_summary
+domain: products
+owner: product-data-team
+
+description: >
+  Product analytics dataset aggregated by category.
+
+layer: gold
+format: iceberg
+
+source:
+  table: lakehouse.silver.products
+
+output:
+  table: lakehouse.gold.product_category_summary
+
+grain:
+  one row per product category
+
+quality:
+  - category must not be null
+  - product_count must be greater than zero
+  - average_price must be greater than zero
+
+consumers:
+  - business_intelligence
+  - analytics
+  - data_science
+
+refresh:
+  mode: batch
+  orchestration: manual
