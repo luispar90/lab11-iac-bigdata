@@ -6,6 +6,7 @@ services:
       - "4566:4566"
     volumes:
       - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 
   glue5:

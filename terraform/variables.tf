@@ -43,3 +43,15 @@ variable "catalog_id" {
   type        = string
   default     = "000000000000"
 }
+
+variable "glue_role_arn" {
+  description = "ARN simulado del rol utilizado por Glue Jobs en Floci."
+  type        = string
+  default     = "arn:aws:iam::000000000000:role/ucv-glue-role"
+}
+
+variable "glue_job_run_timeout" {
+  description = "Timeout declarativo del Glue Job, en minutos."
+  type        = number
+  default     = 30
+}
