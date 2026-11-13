@@ -5,6 +5,7 @@ resource "aws_s3_bucket" "data_lake" {
     Project     = "UCV Big Data"
     Environment = var.environment
     ManagedBy   = "Terraform"
+    CostCenter  = "BI"
   }
 }
 
