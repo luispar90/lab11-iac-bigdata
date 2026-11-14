@@ -6,3 +6,5 @@ crash.log
 data/
 .DS_Store
 .venv/
+airflow.*
+*password*
